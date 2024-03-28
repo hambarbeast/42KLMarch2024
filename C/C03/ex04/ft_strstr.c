@@ -1,51 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mawal <mawal@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 17:50:08 by mawal             #+#    #+#             */
-/*   Updated: 2024/03/27 18:48:39 by mawal            ###   ########.fr       */
+/*   Created: 2024/03/28 20:57:47 by mawal             #+#    #+#             */
+/*   Updated: 2024/03/28 23:22:05 by mawal            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <unistd.h>
+#include <string.h>
 
-int	check_alpha(char c)
-{
-	if ((c >= 'a') && (c <= 'z'))
-	{
-		return (1);
-	}
-	if ((c >= 'A') && (c <= 'Z'))
-	{
-		return (1);
-	}
-	return (0);
-}
-
-int	ft_str_is_alpha(char *str)
+char	*ft_strstr(char *str, char *to_find)
 {
 	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
+	if (to_find[0] == '\0')
+	{
+		return (str);
+	}
 	while (str[i] != '\0')
 	{
-		if (!(check_alpha(str[i])))
+		j = 0;
+		while (str[i + j] == to_find[j])
 		{
-			return (0);
+			if (to_find[j + 1] == '\0')
+			{
+				return (str + i);
+			}
+			j++;
 		}
 		i++;
 	}
-	return (1);
+	return (0);
 }
-
 /*
 int	main(void)
 {
-	printf("Output: %d\n", ft_str_is_alpha("World"));
-	printf("Output: %d\n", ft_str_is_alpha("c0W is D3ad"));
-	printf("Output: %d\n", ft_str_is_alpha(""));
+	char	str[15] = "Hello World";
+	char	str1[15] = "";
+	char	str2[15] = "World";
+	char 	str3[15] = "Chicken";
+
+	printf("%s\n", ft_strstr(str, str1));
+	printf("%s\n", ft_strstr(str, str2));
+	printf("%s\n", ft_strstr(str, str3));
 }*/

@@ -1,51 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mawal <mawal@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 17:50:08 by mawal             #+#    #+#             */
-/*   Updated: 2024/03/27 18:48:39 by mawal            ###   ########.fr       */
+/*   Created: 2024/03/28 15:29:08 by mawal             #+#    #+#             */
+/*   Updated: 2024/03/28 17:13:30 by mawal            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <unistd.h>
+#include <string.h>
 
-int	check_alpha(char c)
-{
-	if ((c >= 'a') && (c <= 'z'))
-	{
-		return (1);
-	}
-	if ((c >= 'A') && (c <= 'Z'))
-	{
-		return (1);
-	}
-	return (0);
-}
-
-int	ft_str_is_alpha(char *str)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	unsigned int	i;
 
-	i = 0;
-	while (str[i] != '\0')
+	if (n == 0)
 	{
-		if (!(check_alpha(str[i])))
-		{
-			return (0);
-		}
+		return (0);
+	}
+	i = 0;
+	while ((s1[i] == s2[i]) && (s1[i] != '\0') && (i < n - 1))
+	{
 		i++;
 	}
-	return (1);
+	if (s1[i] == s2[i])
+	{
+		return (0);
+	}
+	else
+	{
+		return (s1[i] - s2[i]);
+	}
 }
-
 /*
 int	main(void)
 {
-	printf("Output: %d\n", ft_str_is_alpha("World"));
-	printf("Output: %d\n", ft_str_is_alpha("c0W is D3ad"));
-	printf("Output: %d\n", ft_str_is_alpha(""));
+	char s1[] = "Helpo";
+	char s2[] = "Bello";
+	printf("%d", strncmp(s1, s2, 5));
+	printf("%d", ft_strncmp(s1, s2, 5));
 }*/

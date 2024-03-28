@@ -1,51 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mawal <mawal@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 17:50:08 by mawal             #+#    #+#             */
-/*   Updated: 2024/03/27 18:48:39 by mawal            ###   ########.fr       */
+/*   Created: 2024/03/28 17:14:04 by mawal             #+#    #+#             */
+/*   Updated: 2024/03/28 20:56:36 by mawal            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <unistd.h>
+#include <string.h>
 
-int	check_alpha(char c)
-{
-	if ((c >= 'a') && (c <= 'z'))
-	{
-		return (1);
-	}
-	if ((c >= 'A') && (c <= 'Z'))
-	{
-		return (1);
-	}
-	return (0);
-}
-
-int	ft_str_is_alpha(char *str)
+char	*ft_strcat(char *dest, char *src)
 {
 	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (dest[i] != '\0')
 	{
-		if (!(check_alpha(str[i])))
-		{
-			return (0);
-		}
 		i++;
 	}
-	return (1);
+	j = 0;
+	while (src[j] != '\0')
+	{
+		dest[i + j] = src [j];
+		j++;
+	}
+	dest[i + j] = '\0';
+	return (dest);
 }
-
 /*
 int	main(void)
 {
-	printf("Output: %d\n", ft_str_is_alpha("World"));
-	printf("Output: %d\n", ft_str_is_alpha("c0W is D3ad"));
-	printf("Output: %d\n", ft_str_is_alpha(""));
+	char	str1[6] = "Again";
+	char	str2[15] = "Try";
+	
+	printf("%s\n",ft_strcat(str2, str1));
 }*/

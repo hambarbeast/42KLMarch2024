@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mawal <mawal@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 17:50:08 by mawal             #+#    #+#             */
-/*   Updated: 2024/03/27 18:48:39 by mawal            ###   ########.fr       */
+/*   Created: 2024/03/27 21:08:14 by mawal             #+#    #+#             */
+/*   Updated: 2024/03/27 21:14:17 by mawal            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
 
-int	check_alpha(char c)
+int	check_uppercase(char c)
 {
-	if ((c >= 'a') && (c <= 'z'))
-	{
-		return (1);
-	}
 	if ((c >= 'A') && (c <= 'Z'))
 	{
 		return (1);
@@ -26,26 +22,31 @@ int	check_alpha(char c)
 	return (0);
 }
 
-int	ft_str_is_alpha(char *str)
+char	*ft_strlowcase(char *str)
 {
 	unsigned int	i;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (!(check_alpha(str[i])))
+		if (!(check_uppercase(str[i])))
 		{
-			return (0);
+		}
+		else
+		{
+			str[i] = str[i] + 32;
 		}
 		i++;
 	}
-	return (1);
+	str[i] = '\0';
+	return (str);
 }
-
 /*
 int	main(void)
 {
-	printf("Output: %d\n", ft_str_is_alpha("World"));
-	printf("Output: %d\n", ft_str_is_alpha("c0W is D3ad"));
-	printf("Output: %d\n", ft_str_is_alpha(""));
+	char	str [] = "7RY L0WERC4SE!";
+	
+	printf("%s\n", str);
+	ft_strlowcase(str);
+	printf("%s\n", str);
 }*/

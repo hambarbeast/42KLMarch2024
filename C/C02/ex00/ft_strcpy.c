@@ -1,51 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mawal <mawal@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 17:50:08 by mawal             #+#    #+#             */
-/*   Updated: 2024/03/27 18:48:39 by mawal            ###   ########.fr       */
+/*   Created: 2024/03/25 11:22:33 by mawal             #+#    #+#             */
+/*   Updated: 2024/03/25 14:57:53 by mawal            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <stdio.h>
-#include <unistd.h>
 
-int	check_alpha(char c)
-{
-	if ((c >= 'a') && (c <= 'z'))
-	{
-		return (1);
-	}
-	if ((c >= 'A') && (c <= 'Z'))
-	{
-		return (1);
-	}
-	return (0);
-}
-
-int	ft_str_is_alpha(char *str)
+char	*ft_strcpy(char *dest, char *src)
 {
 	unsigned int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (src[i] != '\0')
 	{
-		if (!(check_alpha(str[i])))
-		{
-			return (0);
-		}
+		dest[i] = src[i];
 		i++;
 	}
-	return (1);
+	dest[i] = '\0';
+	return (dest);
 }
-
-/*
+/* remove to try the main
 int	main(void)
 {
-	printf("Output: %d\n", ft_str_is_alpha("World"));
-	printf("Output: %d\n", ft_str_is_alpha("c0W is D3ad"));
-	printf("Output: %d\n", ft_str_is_alpha(""));
+	char	source [] = "Yeay Copied!";
+	char	destination[sizeof(source)];
+
+	ft_strcpy(destination, source);
+	printf("Source: %s. ", source);
+	printf("Destination: %s.\n", destination);
 }*/

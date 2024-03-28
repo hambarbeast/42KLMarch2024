@@ -1,51 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mawal <mawal@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/25 17:50:08 by mawal             #+#    #+#             */
-/*   Updated: 2024/03/27 18:48:39 by mawal            ###   ########.fr       */
+/*   Created: 2024/03/28 13:53:58 by mawal             #+#    #+#             */
+/*   Updated: 2024/03/28 14:09:23 by mawal            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
 
-int	check_alpha(char c)
+int	ft_strcmp(char *s1, char *s2)
 {
-	if ((c >= 'a') && (c <= 'z'))
-	{
-		return (1);
-	}
-	if ((c >= 'A') && (c <= 'Z'))
-	{
-		return (1);
-	}
-	return (0);
-}
-
-int	ft_str_is_alpha(char *str)
-{
-	unsigned int	i;
+	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while ((s1[i] == s2[i]) && (s1[i] != '\0'))
 	{
-		if (!(check_alpha(str[i])))
-		{
-			return (0);
-		}
 		i++;
 	}
-	return (1);
+	if (s1[i] == s2[i])
+	{
+		return (0);
+	}
+	else
+	{
+		return (s1[i] - s2[i]);
+	}
 }
-
 /*
 int	main(void)
 {
-	printf("Output: %d\n", ft_str_is_alpha("World"));
-	printf("Output: %d\n", ft_str_is_alpha("c0W is D3ad"));
-	printf("Output: %d\n", ft_str_is_alpha(""));
+	printf("%d", ft_strcmp("Haha","Hehe"));
 }*/
