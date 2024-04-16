@@ -24,7 +24,6 @@ char	*ft_strcpy(char *dest, char *src)
 	dest[i] = '\0';
 	return (dest);
 }
-/* remove to try the main
 int	main(void)
 {
 	char	source [] = "Yeay Copied!";
@@ -33,4 +32,4 @@ int	main(void)
 	ft_strcpy(destination, source);
 	printf("Source: %s. ", source);
 	printf("Destination: %s.\n", destination);
-}*/
+}
