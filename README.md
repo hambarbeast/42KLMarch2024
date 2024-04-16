@@ -13,18 +13,3 @@ C Projetcs:-
 5. C04
 6. C05
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Simple Markdown Editor</title>
-</head>
-<body>
-  <h1>Markdown Editor</h1>
-  <div id="editor-container">
-    <textarea id="editor" rows="10"></textarea>
-  </div>
-  <div id="preview"></div>
-  <script src="script.js"></script>
-</body>
-</html>
