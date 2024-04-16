@@ -1,15 +1,36 @@
-# 42KLMarch2024
-Compilation of my work from C Piscine 42KualaLumpur
+<style>
+  button {
+    background-color: #FFFDFA; /* Green color */
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+</style>
 
-Shell Projects:- 
-1. Shell00 - completed
-2. Shell01
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>#42KLMarch2024</title>
+</head>
+<body>
+<h3>Compilation of my work from C Piscine 42KualaLumpur</h3>
 
-C Projetcs:-
-1. C00 - completed
-2. C01 - completed
-3. C02 - completed
-4. C03 - completed
-5. C04
-6. C05
+<h4>Shell Projects:- </h4>
+<button>Shell00</button>
+<button>Shell01</button>
 
+<h4>C Projetcs:-</h4>
+<button>C00</button>
+<button>C01</button>
+<button> C02 </button>
+<button> C03 </button>
+<button> C04 </button>
+</body>
+</html>
